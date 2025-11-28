@@ -97,7 +97,7 @@ export default function MockUPI() {
   return (
     <div className="min-h-screen flex items-start justify-center p-6 bg-slate-900 text-slate-100">
       <div className="w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4">Mock UPI (Google Pay style)</h1>
+        <h1 className="text-2xl font-bold mb-4">Mock UPI</h1>
 
         <div className={`p-4 rounded-lg mb-4 ${lowBalance ? "bg-red-900" : "bg-slate-800"}`}>
           <div className="text-sm text-slate-300">Balance</div>
@@ -109,13 +109,13 @@ export default function MockUPI() {
         <div className="space-y-2 mb-4">
           <input
             className="w-full p-2 rounded bg-slate-700 text-white"
-            placeholder="Enter recipient name"
+            placeholder="Enter Sender name"
             value={receiver}
             onChange={(e) => setReceiver(e.target.value)}
           />
           <input
             className="w-full p-2 rounded bg-slate-700 text-white"
-            placeholder="Optional message"
+            placeholder="Receiver"
             value={sender}
             onChange={(e) => setSender(e.target.value)}
           />

@@ -9,24 +9,29 @@ export function normalizeTransactions() {
 
   const raw = JSON.parse(fs.readFileSync(RAW_PATH, "utf-8"));
 
-  const corrected = raw.transactions.map((t: any) => {
-    // sender & receiver are reversed in wallet.json
+  // Extract raw balance (already correct)
+  const correctedBalance = raw.balance;
+
+  // Correct sender/receiver in each transaction
+  const correctedTransactions = raw.transactions.map((t: any) => {
     const realSender = t.receiver;   // ✔ actual sender
     const realReceiver = t.sender;   // ✔ actual receiver
 
     return {
       id: t.id,
-      amount: t.amount,         // amount is correct already (+/-)
+      amount: t.amount,
       sender: realSender,
       receiver: realReceiver,
-      timestamp: t.timestamp
+      timestamp: t.timestamp,
     };
   });
 
-  fs.writeFileSync(
-    CLEAN_PATH,
-    JSON.stringify({ transactions: corrected }, null, 2)
-  );
+  const cleanOutput = {
+    balance: correctedBalance,
+    transactions: correctedTransactions,
+  };
 
-  console.log("Normalized transactions written to clean-transactions.json");
+  fs.writeFileSync(CLEAN_PATH, JSON.stringify(cleanOutput, null, 2));
+
+  console.log("✔ Clean wallet updated at data/clean-transactions.json");
 }

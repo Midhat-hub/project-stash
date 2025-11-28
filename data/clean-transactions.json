@@ -1,5 +1,20 @@
 {
+  "balance": 622,
   "transactions": [
+    {
+      "id": "07003392-1910-40b1-8c83-28678453ad76",
+      "amount": -8,
+      "sender": "You",
+      "receiver": "Alice",
+      "timestamp": "2025-11-28T22:39:30.179Z"
+    },
+    {
+      "id": "a041ae79-3b46-4366-94ff-5f17f355c474",
+      "amount": -120,
+      "sender": "you",
+      "receiver": "zepto",
+      "timestamp": "2025-11-28T22:12:42.589Z"
+    },
     {
       "id": "015a7130-6f4c-48d0-9d15-af8fc19dfab3",
       "amount": -50,
