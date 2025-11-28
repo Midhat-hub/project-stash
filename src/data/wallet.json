@@ -1,0 +1,40 @@
+{
+  "balance": 5150,
+  "transactions": [
+    {
+      "id": "e342e890-3dfe-4c20-a75a-fc82376ae8fb",
+      "amount": -50,
+      "sender": "Alice",
+      "receiver": "You",
+      "timestamp": "2025-11-28T20:13:46.098Z"
+    },
+    {
+      "id": "ad9b44c8-7a60-4dd2-8b58-1a0d6df6c146",
+      "amount": 50,
+      "sender": "you",
+      "receiver": "zomato",
+      "timestamp": "2025-11-28T20:09:59.708Z"
+    },
+    {
+      "id": "2738b172-5cbf-44c6-9403-9a17f04c75a2",
+      "amount": 50,
+      "sender": "Alice",
+      "receiver": "You",
+      "timestamp": "2025-11-28T20:09:27.694Z"
+    },
+    {
+      "id": "2d9abe9c-d4f6-43f9-bd79-95fe636fecc9",
+      "amount": 50,
+      "sender": "Alice",
+      "receiver": "You",
+      "timestamp": "2025-11-28T20:08:11.999Z"
+    },
+    {
+      "id": "3561091b-7d89-4b64-ad1f-111dfb4cb71a",
+      "amount": 50,
+      "sender": "Alice",
+      "receiver": "You",
+      "timestamp": "2025-11-28T20:02:53.551Z"
+    }
+  ]
+}

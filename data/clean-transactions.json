@@ -1,0 +1,54 @@
+{
+  "transactions": [
+    {
+      "id": "015a7130-6f4c-48d0-9d15-af8fc19dfab3",
+      "amount": -50,
+      "sender": "You",
+      "receiver": "Alice",
+      "timestamp": "2025-11-28T21:32:16.737Z"
+    },
+    {
+      "id": "07f7dfbf-ffff-401c-a847-e0ab7f81e824",
+      "amount": -50,
+      "sender": "You",
+      "receiver": "Alice",
+      "timestamp": "2025-11-28T21:24:14.006Z"
+    },
+    {
+      "id": "e49dc08f-bee2-47c3-ba7f-d19b8ec034d0",
+      "amount": -50,
+      "sender": "You",
+      "receiver": "Alice",
+      "timestamp": "2025-11-28T21:03:57.345Z"
+    },
+    {
+      "id": "66875dcc-fca1-48fd-bc7e-9d24a8858da7",
+      "amount": -100,
+      "sender": "you",
+      "receiver": "zomato",
+      "timestamp": "2025-11-28T20:48:17.737Z"
+    },
+    {
+      "id": "6e05095a-86ef-479b-9e7c-d95f6a4d9fc5",
+      "amount": 50,
+      "sender": "zomato",
+      "receiver": "you",
+      "timestamp": "2025-11-28T20:47:57.104Z"
+    },
+    {
+      "id": "bc0b23d3-ac3d-4725-9e56-4f89bd75598d",
+      "amount": -50,
+      "sender": "You",
+      "receiver": "Alice",
+      "timestamp": "2025-11-28T20:39:51.551Z"
+    },
+    {
+      "id": 1764359551783,
+      "amount": 500
+    },
+    {
+      "id": 1764359565094,
+      "amount": 500
+    }
+  ]
+}

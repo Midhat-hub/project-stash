@@ -1,23 +1,26 @@
+// src/app/api/stream/route.ts
 import { NextResponse } from "next/server";
+import { addController, removeController } from "@/lib/broadcaster";
 
-let clients: Response[] = [];
-
-export function GET() {
-  return new ReadableStream({
+export async function GET() {
+  const stream = new ReadableStream({
     start(controller) {
-      clients.push(controller);
-
-      // Send initial connection message
-      controller.enqueue(`data: connected\n\n`);
+      // register controller for broadcasts
+      addController(controller);
+      // send a welcome message
+      controller.enqueue(`data: ${JSON.stringify({ type: "connected", ts: Date.now() })}\n\n`);
     },
     cancel() {
-      clients = clients.filter((c) => c !== controller);
+      // remove handled controllers on disconnect
+      // removeController can't reference controller directly here, so we rely on broadcaster cleanup when enqueue fails
     },
   });
-}
 
-export function broadcast(data: any) {
-  clients.forEach((controller) => {
-    controller.enqueue(`data: ${JSON.stringify(data)}\n\n`);
+  return new Response(stream, {
+    headers: {
+      "Content-Type": "text/event-stream",
+      "Cache-Control": "no-cache, no-transform",
+      Connection: "keep-alive",
+    },
   });
 }

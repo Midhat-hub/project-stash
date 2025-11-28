@@ -10,6 +10,22 @@ export default function MockUPI() {
   const [status, setStatus] = useState("");
   const [lowBalance, setLowBalance] = useState(false);
   const [displayBalance, setDisplayBalance] = useState(balance); // for animation
+  useEffect(() => {
+  async function fetchData() {
+    try {
+      const res = await fetch("/api/transactions");
+      const data = await res.json();
+
+      setBalance(data.balance);
+      setTransactions(data.transactions);
+    } catch (err) {
+      console.error("Error fetching transactions", err);
+    }
+  }
+
+  fetchData();
+}, []);
+
 
   // Watch balance for low balance warning
   useEffect(() => {
@@ -46,7 +62,7 @@ export default function MockUPI() {
       alert("❌ Cannot send more than your balance!");
       return;
     }
-
+console.log("Sending payload:", { amount: amt, sender, receiver });
     // Send transaction to backend
     const response = await fetch("/api/stream", {
       method: "POST",
@@ -123,5 +139,9 @@ export default function MockUPI() {
       {status && <div className="mt-2 text-center text-lg text-green-700">{status}</div>}
     </div>
   );
+}
+
+function setTransactions(transactions: any) {
+  throw new Error("Function not implemented.");
 }
 

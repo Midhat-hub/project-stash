@@ -1,39 +1,39 @@
 "use client";
-
 import { useEffect, useState } from "react";
 
 export default function Dashboard() {
-  const [transactions, setTransactions] = useState([]);
+  const [events, setEvents] = useState<any[]>([]);
 
   useEffect(() => {
-    // fetch existing data
-    fetch("/api/transactions")
-      .then((res) => res.json())
-      .then(setTransactions);
+    fetch("/api/transactions") // initial load (optional)
+      .then((r) => r.json())
+      .then((d) => {
+        // handle initial data if needed
+      });
 
-    // Listen for real-time updates
-    const events = new EventSource("/api/stream");
-
-    events.onmessage = (event) => {
+    const es = new EventSource("/api/stream");
+    es.onmessage = (e) => {
       try {
-        const data = JSON.parse(event.data);
-        setTransactions((prev) => [...prev, data]);
-      } catch {}
+        const parsed = JSON.parse(e.data);
+        if (parsed.type === "transaction") {
+          setEvents((s) => [parsed.transaction, ...s]);
+        }
+      } catch {
+        // ignore non-json ping
+      }
     };
-
-    return () => events.close();
+    es.onerror = () => es.close();
+    return () => es.close();
   }, []);
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold">Transactions</h1>
-
-      <div className="mt-4 space-y-3">
-        {transactions.map((tx, i) => (
-          <div key={i} className="p-4 border rounded-lg">
-            <p className="font-semibold">{tx.name}</p>
-            <p>₹{tx.amount} — {tx.type}</p>
-            <p className="text-sm text-gray-500">{new Date(tx.timestamp).toLocaleString()}</p>
+      <h1 className="text-2xl">Dashboard</h1>
+      <div className="mt-4">
+        {events.map((tx: any) => (
+          <div key={tx.id} className="p-3 border rounded mb-2">
+            <div>{tx.receiver} — ₹{tx.amount}</div>
+            <div className="text-xs text-gray-500">{new Date(tx.timestamp).toLocaleString()}</div>
           </div>
         ))}
       </div>
