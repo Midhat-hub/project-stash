@@ -1,6 +1,13 @@
 {
-  "balance": 667,
+  "balance": 662,
   "transactions": [
+    {
+      "id": "71e03aca-a786-4f5f-b216-b620fa1a2772",
+      "amount": -5,
+      "sender": "You",
+      "receiver": "zomato",
+      "timestamp": "2025-11-29T04:00:19.038Z"
+    },
     {
       "id": "1f831c48-0c8a-4dc1-b999-380f6cf9b347",
       "amount": -5,
