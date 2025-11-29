@@ -1,6 +1,90 @@
 {
-  "balance": 622,
+  "balance": 667,
   "transactions": [
+    {
+      "id": "1f831c48-0c8a-4dc1-b999-380f6cf9b347",
+      "amount": -5,
+      "sender": "Alice",
+      "receiver": "You",
+      "timestamp": "2025-11-29T03:43:53.681Z"
+    },
+    {
+      "id": "6d84da70-e2d7-48be-9c0d-0260acae61a9",
+      "amount": -5,
+      "sender": "transport ",
+      "receiver": "You",
+      "timestamp": "2025-11-29T03:17:24.730Z"
+    },
+    {
+      "id": "47e954d8-d7a1-4b15-bee5-a49c092d9e32",
+      "amount": -5,
+      "sender": "transport ",
+      "receiver": "You",
+      "timestamp": "2025-11-29T03:13:11.424Z"
+    },
+    {
+      "id": "0f4f5a1f-2379-4084-bfea-844ea916232e",
+      "amount": -15,
+      "sender": "transport ",
+      "receiver": "You",
+      "timestamp": "2025-11-29T03:08:06.396Z"
+    },
+    {
+      "id": "9bfba0e8-3aa4-4bf5-a736-7d2dbe8d8078",
+      "amount": -5,
+      "sender": "travel",
+      "receiver": "You",
+      "timestamp": "2025-11-29T03:03:34.854Z"
+    },
+    {
+      "id": "95ca64d9-6877-4fd2-9e33-9c609a3aa852",
+      "amount": 5,
+      "sender": "travel",
+      "receiver": "You",
+      "timestamp": "2025-11-29T02:59:28.796Z"
+    },
+    {
+      "id": "fc90e2fd-d298-48d9-b026-17eb2527891a",
+      "amount": 5,
+      "sender": "travel",
+      "receiver": "You",
+      "timestamp": "2025-11-29T02:58:20.857Z"
+    },
+    {
+      "id": "e70c4508-c944-43d7-8289-64036d08f5c3",
+      "amount": 5,
+      "sender": "travel",
+      "receiver": "You",
+      "timestamp": "2025-11-29T02:58:18.214Z"
+    },
+    {
+      "id": "bb43cc1a-24df-4cd0-842a-b3637c010bef",
+      "amount": 5,
+      "sender": "travel",
+      "receiver": "You",
+      "timestamp": "2025-11-29T02:58:15.777Z"
+    },
+    {
+      "id": "0348d187-f030-428f-bcb3-4905640e7b37",
+      "amount": 5,
+      "sender": "travel",
+      "receiver": "You",
+      "timestamp": "2025-11-29T02:47:50.644Z"
+    },
+    {
+      "id": "eef480bd-f602-48ff-acaa-0f9bce79467f",
+      "amount": 5,
+      "sender": "travel",
+      "receiver": "You",
+      "timestamp": "2025-11-29T02:47:40.022Z"
+    },
+    {
+      "id": "55382367-c416-426a-b874-f1a5dfc4c0a8",
+      "amount": 50,
+      "sender": "travel",
+      "receiver": "You",
+      "timestamp": "2025-11-29T02:47:26.820Z"
+    },
     {
       "id": "07003392-1910-40b1-8c83-28678453ad76",
       "amount": -8,

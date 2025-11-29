@@ -10,8 +10,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="bg-[#f5f7fb] text-gray-900">
 
-        {/* ⭐ TOP NAVIGATION BAR ⭐ */}
-        <nav className="
+        {/* ⭐ TOP NAVIGATION BAR ⭐ 
+       /* <nav className="
           w-full 
           bg-white 
           shadow-md 
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a className="nav-link" href="/transactions">Transactions</a>
             <a className="nav-link" href="/notifications">AI Inbox</a>
           </div>
-        </nav>
+        </nav>*/}
 
         {/* ⭐ MAIN CONTENT BELOW NAVBAR ⭐ */}
         <main className="p-10 max-w-6xl mx-auto">

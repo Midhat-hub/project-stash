@@ -110,3 +110,53 @@ export function checkBudget(tx: any, patterns: any, prefs: any) {
 
   return { warnings, risk, block };
 }
+/* ---------------------------------------------------------
+   AGENT 4 — NUDGE DESIGNER
+   Turns warnings + context into human-like messages
+--------------------------------------------------------- */
+
+export function generateNudge(tx: any, budgetCheck: any, prefs: any, patterns: any) {
+  let messages: string[] = [];
+
+  // If there are budget warnings, convert them to human messages
+  for (const w of budgetCheck.warnings) {
+    messages.push("⚠️ " + w);
+  }
+
+  // Goal-based nudge
+  if (prefs.savingGoalAmount && prefs.savingGoalName) {
+    const pct = ((Math.abs(tx.amount) / prefs.savingGoalAmount) * 100).toFixed(1);
+    messages.push(
+      `Skipping this ₹${Math.abs(tx.amount)} gets you **${pct}% closer** to your goal: ${prefs.savingGoalName}.`
+    );
+  }
+
+  // Leak detection nudge
+  if (patterns.topLeak && patterns.topLeak !== "None") {
+    messages.push(`You spend a lot on **${patterns.topLeak}**. Consider reducing it.`);
+  }
+
+  if (messages.length === 0) {
+    messages.push("👍 This looks okay. You're spending within limits.");
+  }
+
+  return messages;
+}
+/* ---------------------------------------------------------
+   AGENT 5 — FINAL DECISION ENGINE
+   Determines allow / warn / strong-nudge / block
+--------------------------------------------------------- */
+
+export function decideAction(budgetCheck: any) {
+  if (budgetCheck.block) {
+    return "block";       // Cannot proceed unless user confirms strongly
+  }
+  if (budgetCheck.risk === "high") {
+    return "strong-nudge";
+  }
+  if (budgetCheck.risk === "medium") {
+    return "warn";
+  }
+  return "allow";
+}
+
