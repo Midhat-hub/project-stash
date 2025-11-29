@@ -19,7 +19,7 @@ This architecture enables proactive financial governance without requiring direc
 
 Stash is built using a **multi-agent decision framework**:
 
-
+```
 
 ┌───────────────────────────┐
 │   Transaction Event        │
@@ -45,7 +45,7 @@ Stash is built using a **multi-agent decision framework**:
 │ Agent 5: Real-Time Decision Engine            │
 └──────────────────────────────────────────────┘
 
-
+````
 
 Each agent focuses on a distinct domain and provides structured output to the next agent, forming a **reasoning pipeline**.  
 The final decision influences **user actions before the transaction is executed**.
@@ -137,7 +137,7 @@ Records a new transaction and updates balance.
 Runs the full agentic reasoning stack *before* the transaction is approved.  
 Returns:
 
-json
+```json
 {
   "decision": "warn",
   "nudges": [
@@ -145,7 +145,7 @@ json
     "Ordering frequency is above your usual pattern."
   ]
 }
-
+````
 
 ### **POST /api/transactions/after**
 
@@ -205,14 +205,15 @@ This approach mirrors how corporate expense management and neobanks enforce comp
 
 # 🚀 Running Locally
 
-
+```sh
 npm install
 npm run dev
-
+```
 
 APIs available at:
 
+```
 http://localhost:3000/api/
-
+```
 
 ---
