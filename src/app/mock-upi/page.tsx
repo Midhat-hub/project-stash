@@ -160,19 +160,18 @@ export default function MockUPI() {
 
 return (
   <div className="min-h-screen flex justify-center bg-gray-100 p-6">
-      <div className="w-full max-w-80xl flex flex-col items-center">
-
+    <div className="w-full max-w-md flex flex-col items-center">
 
       {/* Header */}
       <h1 className="text-3xl font-bold mb-6 text-blue-700 text-center">
-        Mock UPI 
+        Mock UPI
       </h1>
 
       {/* Balance Card */}
-      <div className="bg-white shadow-md rounded-9xl p-6 mb-6 text-center">
+      <div className="bg-white shadow-lg rounded-2xl p-6 mb-6 w-80 text-center">
         <div className="text-gray-500 text-sm">Available Balance</div>
 
-        <div className="mt-2 text-4xl font-bold text-gray-900">
+        <div className="mt-1 text-4xl font-bold text-gray-900">
           ₹{Math.floor(displayBalance)}
         </div>
 
@@ -183,16 +182,15 @@ return (
         )}
       </div>
 
-      {/* Input Section */}
-      <div className="bg-white shadow-md rounded-9xl p-5 mb-6 space-y-3 w-80">
+      {/* Inputs */}
+      <div className="bg-white shadow-md rounded-2xl p-5 mb-6 space-y-3 w-80">
+
         <input
           className="w-full p-3 rounded-lg border border-gray-300 bg-gray-50"
           placeholder="Sender"
           value={receiver}
           onChange={(e) => setReceiver(e.target.value)}
         />
-
-
 
         <input
           className="w-full p-3 rounded-lg border border-gray-300 bg-gray-50"
@@ -211,63 +209,66 @@ return (
 
       {/* Pay Button */}
       <button
-        
         onClick={sendTx}
         disabled={Number(amount) <= 0 || Number(amount) > balance}
-        className={`w-full py-4 rounded-xl text-lg font-semibold transition ${
+        className={`w-80 py-4 rounded-xl text-lg font-semibold transition ${
           Number(amount) <= 0 || Number(amount) > balance
-            ? "bg-gray-300 text-gray-500"
-            : "bg-blue-600 hover:bg-blue-700 text-white shadow "
+            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+            : "bg-blue-600 hover:bg-blue-700 text-white shadow"
         }`}
       >
         Pay ₹{amount || 0}
       </button>
 
+      {/* Status Message */}
       {status && (
-        <div className="mt-4 text-center text-sm text-blue-700 font-medium">
+        <div className="mt-4 text-center text-sm text-blue-700 font-medium w-80">
           {status}
         </div>
       )}
 
-      {/* Transactions */}
-      <div className="mt-8">
-        <h3 className="text-xl font-semibold mb-3 text-gray-800">
-          Recent Transactions
-        </h3>
+{/* Transactions */}
+<div className="mt-10 w-full px-4">   {/* full width + padding */}
+  <h3 className="text-xl font-semibold mb-4 text-gray-800 text-center">
+    Recent Transactions
+  </h3>
 
-        <div className="space-y-3">
-          {transactions.length === 0 && (
-            <div className="text-sm text-gray-500">No transactions yet</div>
-          )}
+  <div className="space-y-3">
+    {transactions.length === 0 && (
+      <div className="text-sm text-gray-500 text-center">
+        No transactions yet
+      </div>
+    )}
 
-          {transactions.map((tx) => (
-            <div
-              key={tx.id}
-              className="bg-white shadow-sm border border-gray-200 rounded-xl p-15"
-            >
-              <div className="flex justify-between">
-                <div className="font-medium text-gray-900">{tx.receiver}</div>
-                <div
-                  className={
-                    tx.amount > 0
-                      ? "text-green-600 font-semibold"
-                      : "text-red-600 font-semibold"
-                  }
-                >
-                  {tx.amount > 0
-                    ? `+₹${tx.amount}`
-                    : `-₹${Math.abs(tx.amount)}`}
-                </div>
-              </div>
+    {transactions.map((tx) => (
+      <div
+        key={tx.id}
+        className="bg-white shadow-sm border border-gray-200 rounded-xl p-4"
+      >
+        <div className="flex justify-between">
+          <div className="font-medium text-gray-900">{tx.receiver}</div>
 
-              <div className="text-xs text-gray-500 mt-1">
-                {new Date(tx.timestamp).toLocaleString()}
-              </div>
-            </div>
-          ))}
+          <div
+            className={
+              tx.amount > 0
+                ? "text-green-600 font-semibold"
+                : "text-red-600 font-semibold"
+            }
+          >
+            {tx.amount > 0
+              ? `+₹${tx.amount}`
+              : `-₹${Math.abs(tx.amount)}`}
+          </div>
+        </div>
+
+        <div className="text-xs text-gray-500 mt-1">
+          {new Date(tx.timestamp).toLocaleString()}
         </div>
       </div>
+    ))}
+  </div>
+</div>
     </div>
   </div>
-);
+  );
 }
