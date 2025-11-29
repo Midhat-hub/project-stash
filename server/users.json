@@ -1,0 +1,27 @@
+[
+  {
+    "id": "mijpas2j-ken7ry",
+    "email": "demo1@example.com",
+    "passwordHash": "$2b$10$1.CqUucxQiTPYThz3o38aO2sH0yD/.HMHpyWO.C./mNkSZl7SsL0C",
+    "createdAt": "2025-11-29T02:57:22.957Z"
+  },
+  {
+    "id": "mijpas5q-yavvkl",
+    "email": "demo2@example.com",
+    "passwordHash": "$2b$10$cvwkjkNp0S0vuk3PuYrcU.V8GgYxp/WyuyfEpdlW8/.KdPgMelixW",
+    "createdAt": "2025-11-29T02:57:23.056Z"
+  },
+  {
+    "id": "mijpas8g-ca7a0r",
+    "email": "demo3@example.com",
+    "passwordHash": "$2b$10$pdB2W7cJY.p0uy4yhtgu7.NYnoNnfMlMKQsriOiXYHyGWfKuY9tAG",
+    "createdAt": "2025-11-29T02:57:23.153Z"
+  },
+  {
+    "id": "mijq9kps-5fx34r",
+    "name": "Shravani Lad",
+    "email": "shravanilad.ds@gmail.com",
+    "passwordHash": "$2b$10$mFI/mk4Fui4R6d.PWaSf1eWwVJ0mBBhbTYNjKxQVAxobfYfSYp7fS",
+    "createdAt": "2025-11-29T03:24:26.272Z"
+  }
+]
