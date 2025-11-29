@@ -1,0 +1,14 @@
+{
+  "monthlyBudget": 2000,
+  "weeklyBudget": 500,
+  "categoryBudgets": {
+    "Food": 500,
+    "Shopping": 200,
+    "Transport": 80,
+    "Entertainment": 100,
+    "Bills": 500
+  },
+  "savingGoalName": "New Laptop",
+  "savingGoalAmount": 20000,
+  "currentSaved": 0
+}
